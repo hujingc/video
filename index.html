@@ -151,11 +151,25 @@
 				function random() {
 					// Use setProperty to change the grayscale filder and transform properties of the video.
 					// Log what the new values are to the console.
-					
+
 					let vid = document.querySelector('#myVideo');
 					let ran = Math.floor(Math.random() * 100);
-					vid.style.transform="skew("+String(ran)+"deg)"
-					document.getElementById("myVideo").style.transform = "rotate(7deg)";
+					vid.style.setProperty("transform", "skew(" + String(ran) + "deg)")
+					let gray = vid.classList.contains('grayscale');
+					let status="color"
+					if (ran % 2 == 0) {
+						let vid = document.querySelector('#myVideo');
+						if (vid.classList.contains('grayscale') == false) {
+							vid.className += 'grayscale';
+						}
+						status="Grayscale";
+					} else {
+						let vid = document.querySelector('#myVideo');
+						vid.classList.remove('grayscale');
+						status="In color";
+					}
+					console.log(status+" and skewed at " + String(ran) + "deg")
+
 
 				}
 			</script>
