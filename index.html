@@ -61,6 +61,10 @@
 			<script>
 				// You may only change code in the script tag.
 				// You can not change the HTML in the file.
+				document.querySelector('.play').innerHTML =
+					'<img src="https://pixabay.com/images/id-158489/" />' + document.querySelector('.play').innerHTML;
+				document.querySelector('.pause').innerHTML =
+					'<img src="https://pixabay.com/images/id-158489/" />' + document.querySelector('.pause').innerHTML;
 
 
 				function playVid() {
@@ -156,19 +160,19 @@
 					let ran = Math.floor(Math.random() * 100);
 					vid.style.setProperty("transform", "skew(" + String(ran) + "deg)")
 					let gray = vid.classList.contains('grayscale');
-					let status="color"
+					let status = "color"
 					if (ran % 2 == 0) {
 						let vid = document.querySelector('#myVideo');
 						if (vid.classList.contains('grayscale') == false) {
 							vid.className += 'grayscale';
 						}
-						status="Grayscale";
+						status = "Grayscale";
 					} else {
 						let vid = document.querySelector('#myVideo');
 						vid.classList.remove('grayscale');
-						status="In color";
+						status = "In color";
 					}
-					console.log(status+" and skewed at " + String(ran) + "deg")
+					console.log(status + " and skewed at " + String(ran) + "deg")
 
 
 				}
